@@ -22,4 +22,8 @@ export class EtudiantService {
   listProviders(){
     return this.http.get("http://127.0.0.1:8080/providers/list");
   }
+
+  saveProvider(provider:any){
+    return this.http.post("http://127.0.0.1:8080/providers/add",provider);
+  }
 }
