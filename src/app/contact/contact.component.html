@@ -1,1 +1,24 @@
-<h2>Composant CONTACT</h2>
+<h2 align="center">Composant CONTACT</h2>
+<h3>Template Driven Form</h3>
+<h4>Ajout d'un etudiant</h4>
+
+<form #f="ngForm" (ngSubmit)="submit(f)">
+  <label>Nom : </label><input type="text" ngModel name="nomEtudiant"/>
+  <br>
+  <label>Prénom : </label><input type="text" ngModel name="prenomEtudiant"/>
+  <br>
+  <input type="submit" value="Ajouter" class="btn btn-success" />
+</form>
+
+
+
+<hr>
+<h3>Two Way Data Binding</h3>
+<input type="text" [(ngModel)]="providerName"/>
+<br/>
+<input type="text" [(ngModel)]="providerEmail"/>
+<br/>
+  Infos Provider : {{providerName}} - {{providerEmail}}
+  <br/>
+  <button (click)="info()" class="btn btn-success">Nouvelles Valeurs provider</button>
+<hr>

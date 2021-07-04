@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactComponent implements OnInit {
 
+  providerName:string="Samsung";
+  providerEmail:string="samsung@gmail.com";
   constructor() { }
 
   ngOnInit(): void {
   }
+  info(){
+    alert(this.providerName + " "+ this.providerEmail);
+    // Save dans BD
+    //...
+  }
 
+  submit(myform:any){
+   alert(myform.value.nomEtudiant + " "+myform.value.prenomEtudiant);
+  }
 }
