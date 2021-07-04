@@ -17,11 +17,30 @@ export class HomeComponent implements OnInit {
   }
 
   etudiants : string[] = [];
+  users:any;
+  providers:any;
   // cette méthode s'exécute directement après le constructeur
   ngOnInit(): void {
     console.log("ngOnInit!");
     //console.log(this.service.listCandidats());
     this.etudiants = this.service.listCandidats();
+
+    // récupération des données fake :https://jsonplaceholder.typicode.com/users
+    this.service.listUsers().subscribe(
+      data =>{
+        console.log(data);
+        this.users = data;
+      }
+    );
+
+    // récupération des données de l'api ams
+
+    this.service.listProviders().subscribe(
+      res =>{
+        console.log(res);
+        this.providers = res;
+      }
+    );
   }
 
   info(){
